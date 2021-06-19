@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: #0b006b;
+} 
+.container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #222;
+}
+.container .image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.container .image.img1{
+    background: url('../images/img-1.jpeg');
+    background-size: cover;
+    background-position-x: 100%;
+    clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%);
+}
+.container .image.img2{
+    background: url('../images/img-2.jpeg');
+    background-size: cover;
+    clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
+}
+.container .image.img3{
+    background: url('../images/img-3.jpeg');
+    background-size: cover;
+    background-position-x: -100%;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 45% 100%);
+}
+.container:hover .image{
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.container .image:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.container .image .content{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 30%;
+    padding: 5px 10px;
+    background: #ffffff;
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .image:hover .content{
+    bottom: 0;
+    opacity: 1;
+}
